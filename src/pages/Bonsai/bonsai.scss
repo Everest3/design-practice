@@ -1,133 +1,136 @@
 $primary-color:#00b289;
 $text-color: #4c525a;
-.navbar{
-  padding:35px;
-  display: flex;
-  align-items: center;
-  font-size: 16px;
-  justify-content: center;
-}
 
-
-.navbar-items{
-  display: flex;    
-  gap:50px;
-  margin:0px 160px;
-}
-
-.login-area{
-  display:flex;
-  gap:10px;
-
-}
-
-.btn{
-  padding:10px 20px;
-  background-color: $primary-color;
-  border: 1px solid $primary-color ;
-  box-shadow: none;
-  border-radius: 5px;
-  font-weight: bold;
-  white-space: nowrap;
-  text-align: center;
-  color:white;
-
-}
-
-.login-area .login-btn{
-  color:$primary-color;
-  background-color: white
-
-}
-.login-area .start-btn{
-    background-color: $primary-color;
-    color:white;
-}
-
-
-.body{
-  display: flex;
-  justify-content: center;
-  padding-top:100px;
-}
-
-.plans-header{
-  display:flex;
-  gap:25px;
-  align-items: center;
-  justify-content: center;
-  color:$text-color;
-
-}
-.plans-header div{
-  letter-spacing: 2px;
-  font-weight: 600;
-}
-.plans-header div:last-child{
-  color:grey;
-}
-
-.plans-header h2{
-  font-size: 40px;
-  font-weight: normal;
-  padding: 0px;
-  margin:0px;
-}
-
-.plans-body{
-  margin-top:50px;
-  display: flex;
-  justify-content:  center;
-}
-
-.plans-body .card{
-  display: flex;
-  flex-direction: column;
-  margin:15px;
-  width:360px;
-  height:800px;
-  padding:67px 44px;
-  border:1px solid #eee;
-  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
-  color : $text-color;
-  p{
-    font-size:13px
+.bonsai{
+  .navbar{
+    padding:35px;
+    display: flex;
+    align-items: center;
+    font-size: 16px;
+    justify-content: center;
   }
 
-  .price-section{
+
+  .navbar-items{
+    display: flex;    
+    gap:50px;
+    margin:0px 160px;
+  }
+
+  .login-area{
     display:flex;
-    align-items: flex-end;
-    padding-bottom:5px;
-    border-bottom:2px solid $primary-color;
-    .dollar-sign{
-      font-size:30px;
-      align-self: flex-start;
-    }
-    .price{
-      font-size:65px;
-      font-weight: 600;
-      align-self: flex-end;
-    }
-    .plan-type{
-      margin-left:15px;
-      font-size:30px;
-    }
+    gap:10px;
+
   }
 
-  .plan-pros {
-    margin-top:40px;
-  }
-  .plan-item{
-    margin:20px 0px;
-  }
-  .checkmark{
-    margin-right:10px;
-    font-size:12px;
-  }
   .btn{
-    justify-self:flex-end;
-    margin-top:20px;
+    padding:10px 20px;
+    background-color: $primary-color;
+    border: 1px solid $primary-color ;
+    box-shadow: none;
+    border-radius: 5px;
+    font-weight: bold;
+    white-space: nowrap;
+    text-align: center;
+    color:white;
+
   }
 
+  .login-area .login-btn{
+    color:$primary-color;
+    background-color: white
+
+  }
+  .login-area .start-btn{
+      background-color: $primary-color;
+      color:white;
+  }
+
+
+  .body{
+    display: flex;
+    justify-content: center;
+    padding-top:100px;
+  }
+
+  .plans-header{
+    display:flex;
+    gap:25px;
+    align-items: center;
+    justify-content: center;
+    color:$text-color;
+
+  }
+  .plans-header div{
+    letter-spacing: 2px;
+    font-weight: 600;
+  }
+  .plans-header div:last-child{
+    color:grey;
+  }
+
+  .plans-header h2{
+    font-size: 40px;
+    font-weight: normal;
+    padding: 0px;
+    margin:0px;
+  }
+
+  .plans-body{
+    margin-top:50px;
+    display: flex;
+    justify-content:  center;
+  }
+
+  .plans-body .card{
+    display: flex;
+    flex-direction: column;
+    margin:15px;
+    width:360px;
+    height:800px;
+    padding:67px 44px;
+    border:1px solid #eee;
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+    color : $text-color;
+    p{
+      font-size:13px
+    }
+
+    .price-section{
+      display:flex;
+      align-items: flex-end;
+      padding-bottom:5px;
+      border-bottom:2px solid $primary-color;
+      .dollar-sign{
+        font-size:30px;
+        align-self: flex-start;
+      }
+      .price{
+        font-size:65px;
+        font-weight: 600;
+        align-self: flex-end;
+      }
+      .plan-type{
+        margin-left:15px;
+        font-size:30px;
+      }
+    }
+
+    .plan-pros {
+      margin-top:40px;
+    }
+    .plan-item{
+      margin:20px 0px;
+    }
+    .checkmark{
+      margin-right:10px;
+      font-size:12px;
+    }
+    .btn{
+      justify-self:flex-end;
+      margin-top:20px;
+    }
+
+  }
 }
 

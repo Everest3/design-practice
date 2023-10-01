@@ -7,7 +7,7 @@ import {  FaCheck } from "react-icons/fa";
 
 const Bonsai = () => {
   return (
-    <>
+    <div className='bonsai'>
       <div className="navbar">
         <Link to="/">
         <img src={bonsaiLogo} width={150}/>
@@ -177,7 +177,7 @@ const Bonsai = () => {
       </div>
 
     
-    </>
+    </div>
   )
 }
 

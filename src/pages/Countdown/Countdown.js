@@ -12,7 +12,7 @@ const Countdown = () => {
       <div className="main-container">
         <h2>WE'RE LAUNCHING SOON</h2>
         <div className="countdown-cards">
-          <div>
+          <div className='cart-title'>
             <div className="countdown-card">
               08
               <span className='chip'></span>
@@ -20,7 +20,7 @@ const Countdown = () => {
             </div>
             <div className="countdown-card-title">DAYS</div>
           </div>
-          <div>
+          <div className='cart-title'>
             <div className="countdown-card">
               23
               <span className='chip'></span>
@@ -28,7 +28,7 @@ const Countdown = () => {
             </div>
             <div className="countdown-card-title">HOURS</div>
           </div>
-          <div>
+          <div className='cart-title'>
             <div className="countdown-card">
               55
               <span className='chip'></span>
@@ -36,7 +36,7 @@ const Countdown = () => {
             </div>
             <div className="countdown-card-title">MINUTES</div>
           </div>
-          <div>
+          <div className='cart-title'>
             <div className="countdown-card">
               43
               <span className='chip'></span>
