@@ -1,9 +1,15 @@
 import React from 'react'
 
-const NavigationButtons = () => {
+const NavigationButtons = ({step,setStep}) => {
+
+  const handleStep=(count)=>{
+    setStep((step)=>step+count)
+  }
+
+
   return( <div className="actions">
-    <button className="btn">Go Back</button>
-    <button className="btn next-btn">Next Step</button>
+    {step>1 ? <button className="btn back-btn" onClick={()=>handleStep(-1)}>Go Back</button>:<div/>}
+    <button className="btn next-btn" onClick={()=>handleStep(1)}>Next Step</button>
   </div>
 )
 }

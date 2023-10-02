@@ -36,30 +36,24 @@ $alabaster: hsl(231, 100%, 99%);
     position: relative;
   }
 
-  .sidebar-img-mobile{
+  .sidebar.mobile{
     display: none;
   }
+  
 
   .content{
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    width: 100%;
     padding:50px 50px 10px 50px;
   }
 
-  .personal-info{
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    width: 100%;
-    gap:50px;
-  }
-
-  .personal-info .title{
+  .title{
     color:$marineBlue;
   }
 
-  .personal-info .sub-title{
+  .sub-title{
     color:$coolGray;
     font-size:15px;
     margin-top:10px
@@ -102,6 +96,7 @@ $alabaster: hsl(231, 100%, 99%);
     border:none;
     outline:none;
     border-radius: 5px;
+    cursor: pointer;
   }
 
  .next-btn{
@@ -113,13 +108,19 @@ $alabaster: hsl(231, 100%, 99%);
     background-color: hsl(243, 100%, 40%);
   }
 
+  .back-btn:hover{
+    background-color: $lightGray;
+  }
+
   .stepper{
     display: flex;
     flex-direction: column;
     position: absolute;
     top:50px;
-    left:40px;
+    left:0px;
+    right:0px;
     gap:30px;
+    margin-left:40px
   }
 
   .step{  
@@ -158,6 +159,95 @@ $alabaster: hsl(231, 100%, 99%);
     border:solid 1px $lightGray;
     color:black;
   }
+
+  .card-title{
+    color:$marineBlue;
+    font-size:15px;
+  }
+
+  .card-sub-title{
+    margin-top:2px;
+    color:$coolGray;
+  }
+
+  .personal-info{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 100%;
+    gap:50px;
+  }
+
+  .plan{
+    display:flex;
+    flex-direction: column;
+    gap:50px;
+
+    .plan-cards{
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);;
+      column-gap: 10px;
+    }
+
+    .plan-card{
+      display:flex;
+      flex-direction: column;
+      justify-content: space-around;
+      padding-left: 15px;
+      border:1px solid $lightGray;
+      border-radius: 7px;
+      aspect-ratio: 10/12;
+      cursor:pointer;
+      img{
+        width:35px;
+        height: 35px;
+      }
+      &:hover{
+        border:1px solid $purplishBlue;
+      }
+
+    }
+    .plan-cards .active{
+      border: 2px solid $purplishBlue;
+    }
+  }
+
+  .add-ons{
+    display:flex;
+    flex-direction: column;
+    gap:50px;
+
+    .add-on-cards{
+      display: flex;
+      flex-direction: column;
+      gap:10px;
+    }
+
+    .add-on-card{
+      display: flex;
+      align-items: center;
+      width: 100%;
+      padding:15px 20px;
+      border:1px solid $lightGray;
+      border-radius: 7px;
+      input[type="checkbox"]{
+        // width:10px;
+        // height: 10px;
+      }
+    }
+    .card-title{
+      margin-left:10px;
+    }
+    .card-sub-title{
+      width: max-content;
+    }
+    .months{
+      width: 100%;
+      font-size:14px;
+      text-align: right;
+      color:$purplishBlue
+    }
+  }
   
 }
 
@@ -165,33 +255,52 @@ $alabaster: hsl(231, 100%, 99%);
 @media screen  and (max-width: 640px) {
   .multistep-form-page{
     align-items: start;
-    margin-top: 150px;
-
     .container{
       width:88%;
       aspect-ratio: 3/4;
+      margin-top:100px
+    }
+
+    .sidebar.desktop{
+      display: none;
+    }
+    .sidebar.mobile{
+      display: block;
     }
 
     .sidebar{
       position: absolute;
-      z-index:-1;
+      z-index:0;
       top:0;
       left:0;
       right:0;
+      width:100%;
 
     }
-    .sidebar-img-desktop{
-      display: none;
+    .container{
+      z-index:1;
     }
+
     .sidebar-img-mobile{
       display: flex;
+      width:100%;
       flex-direction: row;
       .step-title{
         display: none;
       }
     }
-    .sidebar-img-mobile img{
-      width: 100%;
+    
+    .stepper{
+      flex-direction: row;
+      justify-content: center;
+      left:0;
+      right:0;
+      margin:0;
+
+    }
+    .step .step-title{
+      display: none;
+      margin:0px auto;
     }
   }
 
