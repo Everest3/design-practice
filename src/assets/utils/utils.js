@@ -1,9 +1,10 @@
-const handleInputChange = ({key,value,setState,setErrors}) => {
+export const handleInputChange = ({key,value,setState,errors,setErrors}) => {
+  console.log({key,value})
   const keys = key.split(".");
-  if (errorsState?.[keys[0]]) {
+  if (errors?.[key]) {
     setErrors((st) => ({
       ...st,
-      [keys[0]]: null,
+      [key]: null,
     }));
   }
 

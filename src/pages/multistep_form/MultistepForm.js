@@ -7,6 +7,7 @@ import Stepper from './components/Stepper'
 import NavigationButtons from './components/NavigationButtons'
 import Plan from './steps/Plan'
 import AddOns from './steps/AddOns'
+import { handleInputChange } from '../../assets/utils/utils'
 
 const MultistepForm = () => {
   const deafultState={
@@ -16,8 +17,10 @@ const MultistepForm = () => {
 
   }
   const [state,setState]=useState(deafultState)
+  const [errors,setErrors]=useState({})
   const [step,setStep]=useState(1)
-
+  const handleChange=(props)=>handleInputChange({errors,setErrors,setState,...props})
+console.log({errors})
   return (
     <div className='multistep-form-page'>
           <div className="sidebar mobile">
@@ -30,11 +33,11 @@ const MultistepForm = () => {
           <Stepper state={state} step={step}/>
         </div>
         <div className="content">
-          {step===1&& <PersonalInfo state={state}/>}
-          {step===2&& <Plan state={state}/>}
-          {step===3&& <AddOns state={state}/>}
+          {step===1&& <PersonalInfo state={state} handleChange={handleChange} errors={errors}/>}
+          {step===2&& <Plan state={state} handleChange={handleChange}/>}
+          {step===3&& <AddOns state={state} handleChange={handleChange}/>}
           <div className="mobile-actions">
-            <NavigationButtons step={step} setStep={setStep}/>
+            <NavigationButtons state={state} step={step} setStep={setStep} setErrors={setErrors}/>
           </div>
         </div>
       </div>

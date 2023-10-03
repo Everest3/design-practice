@@ -249,6 +249,15 @@ $alabaster: hsl(231, 100%, 99%);
     }
   }
   
+  .input-error{
+    border:1px solid red !important;
+    padding:50px;
+  }
+
+  .error-message{
+    color:red;
+    font-size:14px
+  }
 }
 
 

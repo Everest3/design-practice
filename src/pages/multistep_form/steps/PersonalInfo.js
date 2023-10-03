@@ -1,6 +1,31 @@
 import React from 'react'
 
-const PersonalInfo = () => {
+const PersonalInfo = ({state,errors,handleChange}) => {
+
+
+  const inputLabel=({label,value,key})=>{
+    return (
+      <div className="input-label">
+        {label && <label htmlFor={key}>{label}</label>}
+        <input
+          className={`${errors[key] ? "input-error" : ""}`}
+          value={value?? ""}
+          id={key}
+          type="text"
+          onChange={(e) =>
+            handleChange({ key, value: e.target.value })
+          }
+        />
+        <div
+          className={`${errors[key] ? "error-message" : ""}`}
+        >
+          {errors[key]}
+        </div>
+      </div>
+    )
+  }
+
+console.log({state,errors})
   return (
     <div className="personal-info">
     <div className="title">
@@ -8,18 +33,9 @@ const PersonalInfo = () => {
       <h3 className="sub-title">Please provide your name,email address,and phone number.</h3>
     </div>
     <div className="form-inputs">
-      <div className="input-label">
-        <label htmlFor="name">Name</label>
-        <input id="name" type="text" />
-      </div>
-      <div className="input-label">
-        <label htmlFor="email">Email</label>
-        <input id="email" type="text" />
-      </div>
-      <div className="input-label">
-        <label htmlFor="phoneNumber">Phone Number</label>
-        <input id="phoneNumber" type="text" />
-      </div>
+      {inputLabel({value:state.personalInfo?.name ,label:"Name",key:"personalInfo.name"})}
+      {inputLabel({value:state.personalInfo?.email ,label:"Email",key:"personalInfo.email"})}
+      {inputLabel({value:state.personalInfo?.phoneNumber ,label:"Phone Number",key:"personalInfo.phoneNumber"})}
     </div>
   </div>
   )

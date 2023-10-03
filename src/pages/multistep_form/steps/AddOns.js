@@ -1,6 +1,6 @@
 import React from 'react'
 
-const AddOns = () => {
+const AddOns = ({state,handleChange}) => {
 
   const addOns=[
     {
@@ -33,7 +33,9 @@ const AddOns = () => {
     <div className="add-on-cards">
       {addOns.map(addOn=>{
         return (
-          <div key={addOn.id} className={`add-on-card active`}>
+          <div key={addOn.id} 
+          className={`add-on-card ${state.addOn.id===addOn.id?"active":""}`} onClick={()=>handleChange({key:"addOn",value:addOn})}
+          >
             <input type="checkbox" />
             <div className="card-title">
               {addOn.title}

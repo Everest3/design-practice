@@ -1,9 +1,20 @@
 import React from 'react'
+import { validate } from './Validation'
 
-const NavigationButtons = ({step,setStep}) => {
+const NavigationButtons = ({state,step,setStep,setErrors}) => {
 
-  const handleStep=(count)=>{
-    setStep((step)=>step+count)
+  const handleStep= async (count)=>{
+    let errors={}
+    if(count>0){
+      errors=await validate({currentStep:step,state:state})
+    }
+    if(Object.keys(errors)?.length>0){
+      setErrors(errors)
+      return 
+    }
+    console.log({errors})
+    // if(Object.k)
+    setStep((currentStep)=>currentStep+count)
   }
 
 
