@@ -13,14 +13,14 @@ const MultistepForm = () => {
   const deafultState={
     personalInfo:{},
     plan:{},
-    addOns:{},
+    addOns:[],
 
   }
   const [state,setState]=useState(deafultState)
   const [errors,setErrors]=useState({})
   const [step,setStep]=useState(1)
   const handleChange=(props)=>handleInputChange({errors,setErrors,setState,...props})
-console.log({errors})
+console.log({state})
   return (
     <div className='multistep-form-page'>
           <div className="sidebar mobile">
@@ -35,7 +35,7 @@ console.log({errors})
         <div className="content">
           {step===1&& <PersonalInfo state={state} handleChange={handleChange} errors={errors}/>}
           {step===2&& <Plan state={state} handleChange={handleChange}/>}
-          {step===3&& <AddOns state={state} handleChange={handleChange}/>}
+          {step===3&& <AddOns state={state} setState={setState} handleChange={handleChange}/>}
           <div className="mobile-actions">
             <NavigationButtons state={state} step={step} setStep={setStep} setErrors={setErrors}/>
           </div>

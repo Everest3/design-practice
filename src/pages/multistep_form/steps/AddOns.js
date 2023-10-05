@@ -1,6 +1,6 @@
-import React from 'react'
+import React, { useMemo } from 'react'
 
-const AddOns = ({state,handleChange}) => {
+const AddOns = ({state,handleChange,setState}) => {
 
   const addOns=[
     {
@@ -22,6 +22,23 @@ const AddOns = ({state,handleChange}) => {
       value:"2"
     },
   ]
+
+  const handleAddOnChange=(newAddOn)=>{
+    setState((state=>{
+      if(state.addOns?.find(addOn=>addOn.id==newAddOn.id)){
+        const filtered=state?.addOns.filter(addOn=>addOn.id !== newAddOn?.id) ?? []
+        return {...state,addOns:filtered}
+      }
+      return{
+        ...state,
+        addOns:[...state.addOns,newAddOn]
+      }
+    }))
+  }
+
+  const selectedAddOns=useMemo(()=>state.addOns.map(addOn=>addOn.id),[state.addOns])
+
+
   return (
     <div className="add-ons">
     <div className="title">
@@ -32,11 +49,12 @@ const AddOns = ({state,handleChange}) => {
     </div>
     <div className="add-on-cards">
       {addOns.map(addOn=>{
+        const checked=selectedAddOns.includes(addOn?.id)
         return (
           <div key={addOn.id} 
-          className={`add-on-card ${state.addOn.id===addOn.id?"active":""}`} onClick={()=>handleChange({key:"addOn",value:addOn})}
+          className={`add-on-card ${checked?"active":""}`} onClick={()=>handleAddOnChange(addOn)}
           >
-            <input type="checkbox" />
+            <input type="checkbox" checked={checked} onChange={()=>{}}/>
             <div className="card-title">
               {addOn.title}
               <div className="card-sub-title">{addOn.subHeader}</div>
