@@ -263,6 +263,54 @@ $alabaster: hsl(231, 100%, 99%);
       color:$purplishBlue
     }
   }
+
+  .summary{
+    .summary-container{
+      border-radius:10px;
+      background-color: $magnolia;
+      margin-top: 50px;
+      padding:30px 20px;
+      .horizontal-rule{
+        background-color:$lightGray;
+        width:100%;
+        height: 1px;
+        margin:20px 0px;
+      }
+    }
+  
+    .plan-summary{
+      display: flex;
+      justify-content: space-between;
+      font-weight: 700;
+      .change-link{
+        color:$purplishBlue;
+        text-decoration:underline;
+        font-size:14px;
+        margin-top:5px
+      }
+    }
+
+    .plan-add-ons{
+      display: flex;
+      flex-direction: column;
+      gap:10px;
+    }
+
+    .plan-add-on{
+      display: flex;
+      justify-content: space-between;
+    }
+
+    .plan-add-on .add-on-header{
+      color:$coolGray;
+      font-weight: 600;
+    }
+    .plan-add-ons{
+      font-size:14px;
+    }
+  }
+
+
   
   .input-error{
     border:1px solid red !important;

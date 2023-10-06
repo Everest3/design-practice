@@ -7,6 +7,11 @@ export const personalInfoSchema = Yup.object().shape({personalInfo:Yup.object().
 })})
 
 
+export const planSchema = Yup.object().shape({plan:Yup.object().shape({
+  id:Yup.number().required("Plan is required")
+})})
+
+
 export const validateStep = async (schema, data) => {
   let errors = {};
   try {
@@ -22,6 +27,10 @@ export const validateStep = async (schema, data) => {
 export const validate = async ({currentStep,state}) => {
   if (currentStep === 1) {
       return validateStep(personalInfoSchema,state)
+  }else if(currentStep===2){
+    const test=validateStep(planSchema,state)
+    console.log({test})
+    return test
   }
   //  else if (currentStep === 2) {
   //     return validateStep(customerSchema, application)

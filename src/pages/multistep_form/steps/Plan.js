@@ -3,7 +3,7 @@ import arcade from "../../../assets/multi-step-form-main/assets/images/icon-arca
 import advanced from "../../../assets/multi-step-form-main/assets/images/icon-advanced.svg"
 import pro from "../../../assets/multi-step-form-main/assets/images/icon-pro.svg"
 
-const Plan = ({state,handleChange}) => {
+const Plan = ({state,handleChange,errors}) => {
   const plans=[
     {
       id:1,
@@ -32,7 +32,7 @@ const Plan = ({state,handleChange}) => {
       <div className="plan-cards">
         {plans.map(plan=>{
           return (
-            <div key={plan.id} className={`plan-card ${state.plan.id===plan.id?"active":""}`} onClick={()=>handleChange({key:"plan",value:plan})}>
+            <div key={plan.id} className={`plan-card ${state.plan.id===plan.id?"active":""}`} onClick={()=>handleChange({key:"plan",value:plan,path:"plan.id"})}>
             <img src={arcade} alt="arcade" /> 
             <div className="card-title">
               Arcade
@@ -42,6 +42,7 @@ const Plan = ({state,handleChange}) => {
           )
         })}
       </div>
+      {errors?.["plan.id"] &&<div className="error-message">{errors?.["plan.id"] ?? ""}</div>}
     </div>
   )
 }

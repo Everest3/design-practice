@@ -25,7 +25,6 @@ const PersonalInfo = ({state,errors,handleChange}) => {
     )
   }
 
-console.log({state,errors})
   return (
     <div className="personal-info">
     <div className="title">
